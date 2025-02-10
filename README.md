@@ -1,6 +1,8 @@
 # ✨ Sparkle UI Library
 
-[![Featured Image](demo/public/featuredimg.png)](https://sparkle-ui-library.netlify.app/)
+<a href="https://sparkle-ui-library.netlify.app/" target="_blank">
+  <img src="demo/public/featuredimg.png" alt="Featured Image"  />
+</a>
 
 **Sparkle** is an aesthetic React UI Component Library built with TypeScript and Vite. Designed to bring beauty, functionality, and simplicity to your user interfaces, it offers a modern take on reusable components inspired by leading design systems.
 
