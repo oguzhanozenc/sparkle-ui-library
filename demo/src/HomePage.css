@@ -1,0 +1,33 @@
+.introduction-page {
+  line-height: 2;
+}
+
+.introduction-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.page-description {
+  font-size: var(--font-size-small);
+  line-height: 1.6;
+  margin-top: calc(1rem * 1.618);
+}
+
+.highlights-list {
+  margin-top: 1rem;
+  line-height: 1.8;
+}
+
+.highlights-list li {
+  margin-bottom: calc(0.75rem * 1.618);
+}
+
+.geist-link {
+  color: var(--color-success-hover);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.geist-link:hover {
+  color: var(--color-success);
+}

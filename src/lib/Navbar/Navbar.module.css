@@ -1,0 +1,84 @@
+.navbar {
+  width: fit-content;
+  display: flex;
+  margin: var(--margin-navbar);
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: var(--padding-medium);
+  z-index: 100;
+  background: var(--color-button-outline-bg);
+  border-radius: var(--border-radius-navbar);
+  border: var(--border-width) solid var(--color-navbar-border);
+}
+
+.navbarMenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.navLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  margin: 0 0.25rem;
+  text-decoration: none;
+  color: var(--color-navbar-link);
+  border-radius: 50%;
+  transition: background var(--transition-medium),
+    color var(--transition-medium);
+}
+
+.navLink:hover {
+  background: var(--color-button-secondary-hover);
+}
+
+.hoveredText {
+  position: absolute;
+  top: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: var(--font-size-small);
+  opacity: 0;
+  background: var(--color-navbar-link);
+  color: var(--color-button-outline-bg);
+  padding: var(--padding-small);
+  border-radius: var(--border-radius-button);
+  animation: swipeIn 0.5s forwards;
+}
+
+.navLink:not(:hover) .hoveredText {
+  animation: swipeOut 0.5s forwards;
+}
+
+.navLinkActive {
+  background: var(--color-button-secondary-hover);
+  color: var(--color-navbar-active-link);
+}
+
+@keyframes swipeIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes swipeOut {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}

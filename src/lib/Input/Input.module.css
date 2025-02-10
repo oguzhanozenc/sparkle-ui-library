@@ -1,0 +1,54 @@
+.inputWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border: var(--border-width) solid var(--color-card-border);
+  border-radius: var(--border-radius-button);
+  padding: var(--padding-input-wrapper);
+  gap: 0.5rem;
+  background-color: var(--background-color-body);
+  transition: border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+  box-shadow: var(--box-shadow-input);
+  max-width: 100%;
+}
+
+.inputWrapper:focus-within {
+  border-color: var(--color-button-outline-text);
+  box-shadow: var(--box-shadow-dropdown-focus);
+}
+
+.inputWrapperError {
+  border-color: var(--color-error);
+  background-color: var(--color-input-error-bg);
+  box-shadow: var(--box-shadow-input-error);
+}
+
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: var(--padding-medium);
+  font-size: var(--font-size-large);
+  background-color: transparent;
+  color: var(--color-button-outline-text);
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family);
+}
+
+.input::placeholder {
+  color: var(--color-input-placeholder);
+}
+
+.prefix,
+.suffix {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-input-wrapper);
+  font-size: 16px;
+  color: var(--color-button-outline-text);
+  background-color: var(--color-button-secondary-hover);
+  border-radius: var(--border-radius-checkbox);
+  font-weight: var(--font-weight-medium);
+}

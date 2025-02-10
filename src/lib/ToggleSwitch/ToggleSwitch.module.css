@@ -1,0 +1,33 @@
+.toggleSwitch {
+  width: var(--width-toggle-switch);
+  height: var(--height-toggle-switch);
+  background-color: var(--color-toggle-bg);
+  border-radius: var(--border-radius-toggle-switch);
+  position: relative;
+  cursor: pointer;
+  transition: background-color var(--transition-toggle);
+}
+
+.toggleSwitch.on {
+  background-color: var(--color-toggle-on);
+}
+
+.toggleSwitch.disabled {
+  background-color: var(--color-toggle-disabled);
+  cursor: not-allowed;
+}
+
+.toggleKnob {
+  width: var(--width-toggle-knob);
+  height: var(--height-toggle-knob);
+  background-color: var(--color-toggle-knob);
+  border-radius: 50%;
+  position: absolute;
+  top: var(--position-toggle-knob);
+  left: var(--position-toggle-knob);
+  transition: left var(--transition-toggle);
+}
+
+.toggleSwitch.on .toggleKnob {
+  left: var(--toggle-knob-move);
+}

@@ -1,0 +1,6 @@
+demo/           
+public/           
+node_modules/    
+*.test.js       
+*.test.ts
+*.test.tsx

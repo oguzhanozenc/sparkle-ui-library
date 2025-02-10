@@ -1,0 +1,287 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&display=swap");
+
+:root {
+  /* Colors */
+  --color-primary: #0070f3;
+  --color-primary-hover: #005bb5;
+  --color-primary-active: #e0f0ff;
+  --color-success: #21c08b;
+  --color-success-hover: #1a9a6e;
+  --color-success-active: #d0ffe5;
+  --color-warning: #f5a623;
+  --color-warning-hover: #d48c1b;
+  --color-warning-active: #ffe8c0;
+  --color-error: #ff4d4f;
+  --color-error-hover: #d32f2f;
+  --color-error-active: #ffd6d6;
+  --color-neutral-bg: #f1f1f1;
+  --color-neutral-text: #444;
+  --color-disabled-bg: #eaeaea;
+  --color-disabled-text: #999;
+  --color-disabled-border: #dcdcdc;
+  --color-focus-outline: rgba(0, 112, 243, 0.5);
+  --color-body: #333;
+  --background-color-body: #f8f9fa;
+
+  /* Avatar */
+  --color-avatar-bg: var(--color-neutral-bg);
+  --color-avatar-border: var(--color-disabled-border);
+  --color-avatar-text: var(--color-neutral-text);
+  --color-avatar-text-bg: var(--color-disabled-border);
+  --border-width-avatar: var(--border-width);
+  --font-weight-avatar-text: 600;
+
+  /* Badge */
+  --color-badge-bg: var(--color-neutral-bg);
+  --color-badge-text: var(--color-neutral-text);
+  --color-badge-border: transparent;
+
+  /* Button */
+  --color-button-primary: #212529;
+  --color-button-primary-hover: #000;
+  --color-button-secondary-hover: #e9ecef;
+  --color-button-outline-bg: #fff;
+  --color-button-outline-text: #212529;
+  --color-button-ghost-text: #212529;
+
+  /* Loader */
+  --color-loader-border-top: #212529;
+
+  /* Card */
+  --color-card-border: #ced4da;
+  --box-shadow-card: 0 4px 6px rgba(0, 0, 0, 0.05);
+  --box-shadow-card-hover: 0 6px 8px rgba(0, 0, 0, 0.1);
+  --color-card-header-border: #e9ecef;
+  --padding-card-body: 1.25rem;
+  --padding-card-footer: 0.75rem;
+  --padding-card-header: 1rem;
+  --color-subtitle: #6c757d;
+
+  /* Checkbox */
+  --color-checkbox-border: #ccc;
+  --border-radius-checkbox: 0.25rem;
+
+  /* Dropdown */
+  --color-dropdown-hover-border: #adb5bd;
+  --box-shadow-dropdown-focus: 0 0 0 2px rgba(33, 37, 41, 0.2);
+  --color-dropdown-disabled-bg: #f1f3f5;
+  --color-dropdown-disabled-text: #adb5bd;
+  --box-shadow-dropdown-menu: 0 0 4px rgba(0, 0, 0, 0.1);
+  --color-dropdown-item-border: #dee2e6;
+
+  /* Input */
+  --padding-input-wrapper: 0.25rem 0.5rem;
+  --box-shadow-input: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --color-input-error-bg: #fff5f5;
+  --box-shadow-input-error: 0 0 0 2px rgba(255, 0, 0, 0.2);
+  --color-input-placeholder: #adb5bd;
+
+  /* Menu */
+  --padding-menu-dropdown: 0.5rem 0;
+  --padding-menu-item: 0.75rem 1rem;
+  --color-menu-item-hover-bg: rgba(0, 0, 0, 0.05);
+  --color-menu-button-active-bg: rgba(0, 0, 0, 0.1);
+
+  /* Navbar */
+  --color-navbar-border: rgb(230, 230, 230);
+  --border-radius-navbar: 5rem;
+  --margin-navbar: 2rem 0;
+  --color-navbar-link: #373737;
+  --color-navbar-active-link: #1d1d1d;
+
+  /* Page */
+  --padding-page: 1rem 4rem;
+  --margin-page: 1rem auto;
+  --padding-page-header: 0.5rem 0;
+  --margin-page-header: 1.9rem;
+  --padding-header-icon: 0.35rem;
+  --font-size-header-large: 2.5rem;
+  --font-size-header-medium: 2rem;
+  --font-size-header-small: 1.5rem;
+  --font-size-subtitle-large: 1.25rem;
+  --font-size-subtitle-medium: 1rem;
+  --font-size-subtitle-small: 0.875rem;
+  --padding-page-snippet: 0.75rem;
+  --font-family-monospace: "Geist Mono", monospace;
+  --color-scrollbar-thumb: #555;
+  --color-scrollbar-thumb-hover: #666;
+
+  /* Sidebar */
+  --width-sidebar: 16rem;
+  --width-sidebar-collapsed: 3.5rem;
+  --padding-sidebar: 0.5rem 0;
+  --padding-sidebar-header: 0.5rem 1rem;
+  --padding-section-title: 0.5rem 1rem 0.5rem;
+  --font-size-section-title: 0.6875rem;
+  --color-sidebar-bg: var(--background-color-body);
+  --color-sidebar-border: var(--color-disabled-border);
+  --color-sidebar-item-hover: rgba(242, 242, 242, 0.5);
+  --color-sidebar-item-active: #ebebeb;
+  --color-sidebar-icon: #495057;
+  --color-sidebar-header-icon-bg: var(--color-body);
+  --padding-sidebar-tooltip: 0.25rem 0.5rem;
+
+  /* Textarea */
+  --padding-textarea: 0.625rem;
+  --border-textarea: var(--border-width) solid #ddd;
+  --border-radius-textarea: 0.4rem;
+  --font-size-textarea: 0.9rem;
+  --color-textarea-bg: #f9f9f9;
+  --color-textarea-text: var(--color-body);
+  --color-textarea-placeholder: var(--color-disabled-text);
+  --color-textarea-hover: #bbb;
+  --color-textarea-focus-border: var(--color-primary);
+  --box-shadow-textarea-focus: 0 0 0 3px rgba(0, 112, 243, 0.2);
+  --color-textarea-error-border: var(--color-error);
+  --color-textarea-error-bg: #ffeaea;
+  --font-size-counter: var(--font-size-small);
+  --color-counter: #666;
+
+  /* Toggle Switch */
+  --width-toggle-switch: 2.5rem;
+  --height-toggle-switch: 1.25rem;
+  --border-radius-toggle-switch: var(--height-toggle-switch);
+  --color-toggle-bg: #ccc;
+  --color-toggle-on: var(--color-body);
+  --color-toggle-disabled: #e0e0e0;
+  --width-toggle-knob: 1rem;
+  --height-toggle-knob: 1rem;
+  --color-toggle-knob: #fff;
+  --position-toggle-knob: 0.125rem;
+  --toggle-knob-move: calc(100% - 1.125rem);
+  --transition-toggle: 0.2s ease-in-out;
+
+  /* Typography */
+  --font-family: "Geist", serif;
+  --font-size-small: 0.875rem;
+  --font-size-medium: 0.9375rem;
+  --font-size-large: 1rem;
+  --font-size-avatar-small: var(--font-size-small);
+  --font-size-avatar-medium: var(--font-size-medium);
+  --font-size-avatar-large: 1.25rem;
+  --font-size-badge: 0.875rem;
+  --font-weight-bold: bold;
+  --font-weight-medium: 600;
+
+  /* Spacing */
+  --padding-small: 0.25rem 0.75rem;
+  --padding-medium: 0.5rem 1rem;
+  --padding-large: 0.75rem 1.5rem;
+  --badge-padding: 0.35rem 0.75rem;
+
+  /* Avatar Sizes */
+  --avatar-size-small: 32px;
+  --avatar-size-medium: 48px;
+  --avatar-size-large: 64px;
+
+  /* Borders & Shadows */
+  --border-radius-global: 1rem;
+  --border-radius-avatar: 50%;
+  --border-radius-button: 0.5rem;
+  --border-radius-badge: var(--border-radius-global);
+  --border-width: 1px;
+  --box-shadow-small: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --box-shadow-hover: 0 4px 10px rgba(0, 0, 0, 0.15);
+  --box-shadow-active-primary: 0 4px 10px rgba(0, 112, 243, 0.5);
+  --box-shadow-active-success: 0 4px 10px rgba(33, 192, 139, 0.5);
+  --box-shadow-active-warning: 0 4px 10px rgba(245, 166, 35, 0.5);
+  --box-shadow-active-error: 0 4px 10px rgba(255, 77, 79, 0.5);
+  --box-shadow-disabled: none;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease-in-out;
+  --transition-medium: 0.3s ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--color-body);
+  background-color: var(--background-color-body);
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  width: 100%;
+  border-radius: var(--border-radius-global);
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.app-layout {
+  display: flex;
+  height: 100vh;
+}
+
+.app-layout .app-content {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+.page-item-content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 2rem 0;
+}
+
+@media (max-width: 768px) {
+  .app-layout > .sidebar {
+    width: 100%;
+    position: relative;
+  }
+
+  .app-layout .app-content {
+    margin-left: 0;
+  }
+}
+
+.app-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  text-align: end;
+  padding: 1rem 1rem;
+  border-top: 1px solid #ddd;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.app-footer p {
+  margin: 0.25rem 0;
+  font-weight: 500;
+}
+
+.app-footer nav a {
+  margin: 0 0.25rem;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.app-footer nav a:hover {
+}

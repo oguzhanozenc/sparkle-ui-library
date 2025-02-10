@@ -1,0 +1,94 @@
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  font-family: var(--font-family);
+  position: relative;
+}
+
+.dropdown button {
+  font-family: var(--font-family);
+}
+
+.dropdownSelected {
+  padding: var(--padding-medium);
+  border: var(--border-width) solid var(--color-card-border);
+  border-radius: var(--border-radius-button);
+  background: var(--background-color-body);
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-button-outline-text);
+  cursor: pointer;
+  transition: border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown:hover .dropdownSelected {
+  border-color: var(--color-dropdown-hover-border);
+}
+
+.dropdown:focus-within .dropdownSelected {
+  border-color: var(--color-button-outline-text);
+  box-shadow: var(--box-shadow-dropdown-focus);
+}
+
+.disabled .dropdownSelected {
+  background: var(--color-dropdown-disabled-bg);
+  color: var(--color-dropdown-disabled-text);
+  cursor: not-allowed;
+}
+
+.dropdownMenu {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.25em;
+  padding: 0;
+  list-style: none;
+  border: var(--border-width) solid var(--color-card-border);
+  border-radius: var(--border-radius-button);
+  background: var(--color-button-outline-bg);
+  max-height: 12.5em;
+  overflow-y: auto;
+  box-shadow: var(--box-shadow-dropdown-menu);
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.open .dropdownMenu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdownItem {
+  padding: var(--padding-medium);
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-button-outline-text);
+  cursor: pointer;
+  transition: background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.dropdownItem:hover {
+  background: var(--color-button-secondary-hover);
+}
+
+.dropdownItem.disabled {
+  color: var(--color-dropdown-disabled-text);
+  cursor: not-allowed;
+}
+
+.dropdownItem.active {
+  background: var(--color-body);
+  color: #fff;
+}
+
+.dropdownItem:not(.disabled):not(:last-child) {
+  border-bottom: var(--border-width) solid var(--color-dropdown-item-border);
+}

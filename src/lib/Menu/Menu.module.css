@@ -1,0 +1,97 @@
+.menuContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.menuDropdown {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: calc(100% + 0.25rem);
+  left: 0;
+  background-color: var(--color-button-outline-bg);
+  border: var(--border-width) solid var(--color-disabled-border);
+  border-radius: var(--border-radius-button);
+  box-shadow: var(--box-shadow-hover);
+  padding: var(--padding-menu-dropdown);
+  z-index: 100;
+  overflow: hidden;
+  transition: opacity var(--transition-fast), transform var(--transition-medium);
+}
+
+.menuDropdown::before {
+  content: "";
+  position: absolute;
+  top: -0.5rem;
+  left: 1.25rem;
+  width: 0;
+  height: 0;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-bottom: 0.5rem solid var(--color-button-outline-bg);
+}
+
+.menuItem {
+  padding: var(--padding-menu-item);
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-neutral-text);
+  cursor: pointer;
+  transition: background-color var(--transition-medium),
+    color var(--transition-medium);
+}
+
+.menuItem:hover {
+  background-color: var(--color-menu-item-hover-bg);
+  color: var(--color-body);
+}
+
+.menuButton {
+  padding: var(--padding-medium);
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-neutral-text);
+  background-color: var(--color-button-outline-bg);
+  border: var(--border-width) solid var(--color-disabled-border);
+  border-radius: var(--border-radius-button);
+  cursor: pointer;
+  transition: background-color var(--transition-medium),
+    transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.menuButton:hover {
+  background-color: var(--color-menu-item-hover-bg);
+  box-shadow: var(--box-shadow-hover);
+  transform: translateY(-0.125rem);
+}
+
+.menuButton:active {
+  background-color: var(--color-menu-button-active-bg);
+  box-shadow: var(--box-shadow-small);
+  transform: translateY(0);
+}
+
+.menuButton-small {
+  font-size: var(--font-size-small);
+  padding: 0.375rem 0.75rem;
+}
+
+.menuButton-medium {
+  font-size: var(--font-size-medium);
+  padding: var(--padding-medium);
+}
+
+.menuButton-large {
+  font-size: var(--font-size-large);
+  padding: 0.875rem 1.25rem;
+}
+
+.menuDropdown::-webkit-scrollbar {
+  width: 0.375rem;
+}
+
+.menuDropdown::-webkit-scrollbar-thumb {
+  background-color: var(--color-disabled-border);
+  border-radius: var(--border-radius-checkbox);
+}

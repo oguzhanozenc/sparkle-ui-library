@@ -1,0 +1,27 @@
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.hiddenCheckbox {
+  display: none;
+}
+
+.checkmark {
+  width: 1rem;
+  height: 1rem;
+  border: var(--border-width) solid var(--color-checkbox-border);
+  border-radius: var(--border-radius-checkbox);
+  position: relative;
+}
+
+.hiddenCheckbox:checked + .checkmark {
+  background-color: var(--color-button-outline-text);
+  border-color: var(--color-button-outline-text);
+}
+
+.label {
+  font-size: var(--font-size-small);
+}
