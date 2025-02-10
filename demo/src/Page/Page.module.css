@@ -78,7 +78,7 @@
 .pageSnippet {
   font-size: var(--font-size-small);
   overflow-x: auto;
-  background: var(--color-button-outline-bg);
+  background-color: var(--background-color-body);
   border-radius: var(--border-radius-button);
   padding: var(--padding-page-snippet);
   border: var(--border-width) solid var(--color-card-header-border);

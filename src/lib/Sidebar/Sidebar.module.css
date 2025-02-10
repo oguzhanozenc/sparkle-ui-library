@@ -89,6 +89,7 @@
 
 .sidebarItem {
   display: flex;
+  align-items: center;
   padding: var(--padding-small);
   border-radius: var(--border-radius-button);
   cursor: pointer;

@@ -19,6 +19,8 @@ import NavbarShowcase from "./src/Navbar.demo";
 import SidebarShowcase from "./src/Sidebar.demo";
 import TextareaShowcase from "./src/Textarea.demo";
 import ToggleSwitchShowcase from "./src/ToggleSwitch.demo";
+import ConfigurationPage from "./src/ConfigurationPage";
+import LogoutPage from "./src/LogoutPage";
 import SparkleIcon from "./src/SparkleIcon";
 import {
   TbHome,
@@ -117,13 +119,13 @@ function MainApp() {
           ))}
         </Sidebar.Section>
 
-        <Sidebar.Section title="Settings">
-          <Link to="/settings">
+        <Sidebar.Section title="Configuration">
+          <Link to="/configuration">
             <Sidebar.Item
               icon={<TbSettings />}
-              isActive={location.pathname === "/settings"}
+              isActive={location.pathname === "/configuration"}
             >
-              Settings
+              Configuration
             </Sidebar.Item>
           </Link>
         </Sidebar.Section>
@@ -155,8 +157,8 @@ function MainApp() {
           <Route path="/sidebar" element={<SidebarShowcase />} />
           <Route path="/textarea" element={<TextareaShowcase />} />
           <Route path="/toggleswitch" element={<ToggleSwitchShowcase />} />
-          <Route path="/settings" element={<p>Settings Page</p>} />
-          <Route path="/logout" element={<p>Logging out...</p>} />
+          <Route path="/configuration" element={<ConfigurationPage />} />
+          <Route path="/logout" element={<LogoutPage />} />
           <Route path="*" element={<IntroductionPage />} />
         </Routes>
         <Footer />
