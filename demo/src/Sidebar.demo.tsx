@@ -1,6 +1,5 @@
 import Page from "./Page";
-import Sidebar from "../../src/lib/Sidebar";
-import Avatar from "../../src/lib/Avatar";
+import { Sidebar, Avatar } from "sparkle-ui-library";
 import { Link } from "react-router-dom";
 import {
   TbHome,
@@ -8,24 +7,30 @@ import {
   TbFileText,
   TbSettings,
   TbLogout,
-  TbChevronDown,
+  TbChevronsLeft,
+  TbChevronsRight,
 } from "react-icons/tb";
 import SparkleIcon from "./SparkleIcon";
 
 export default function SidebarDemo() {
   const codeSnippet = `
-import { Sidebar } from 'sparkle-ui-library';
+import { Sidebar, Avatar } from 'sparkle-ui-library';
 import { TbHome, TbUsers, TbFileText, TbSettings, TbLogout } from 'react-icons/tb';
 import { Link } from 'react-router-dom';
 
 export default function Example() {
   return (
-    <Sidebar>
+      <Sidebar
+        collapseIcon={<TbChevronsLeft />}
+        expandIcon={<TbChevronsRight />}
+      >
       <Sidebar.Header title="Sparkle" subtitle="UI Component Library" icon={<TbHome />} />
+      
       <Sidebar.Section title="Main">
         <Link to="/dashboard">
           <Sidebar.Item icon={<TbHome />} isActive={true}>Dashboard</Sidebar.Item>
         </Link>
+        
         <Sidebar.Item icon={<TbUsers />}>
           Audience
           <div className="nested-items">
@@ -37,6 +42,7 @@ export default function Example() {
             </Link>
           </div>
         </Sidebar.Item>
+
         <Sidebar.Item icon={<TbFileText />}>
           Posts
           <div className="nested-items">
@@ -55,16 +61,29 @@ export default function Example() {
           </div>
         </Sidebar.Item>
       </Sidebar.Section>
+
       <Sidebar.Section title="Settings">
         <Link to="/settings">
           <Sidebar.Item icon={<TbSettings />}>Settings</Sidebar.Item>
         </Link>
       </Sidebar.Section>
+
       <Sidebar.Section title="Account">
         <Link to="/logout">
           <Sidebar.Item icon={<TbLogout />}>Logout</Sidebar.Item>
         </Link>
       </Sidebar.Section>
+
+      <Sidebar.Footer
+        avatar={<Avatar size="small"><Avatar.Image src="avatar.jpg" alt="User Avatar" /></Avatar>}
+        name="John Doe"
+        email="john.doe@example.com"
+        dropdownItems={[
+          { label: "Profile", onClick: () => console.log("Profile clicked") },
+          { label: "Account Settings", onClick: () => console.log("Account Settings clicked") },
+          { label: "Logout", onClick: () => console.log("Logout clicked") }
+        ]}
+      />
     </Sidebar>
   );
 }`;
@@ -73,13 +92,16 @@ export default function Example() {
     <Page>
       <Page.Header
         title="Sidebar Component"
-        subtitle="Navigation component for UI frameworks."
+        subtitle="A flexible navigation component for UI frameworks."
       />
 
       <Page.Item>
-        <h2>Example Usage</h2>
+        <h2>Interactive Sidebar Example</h2>
         <div className="page-item-content">
-          <Sidebar>
+          <Sidebar
+            collapseIcon={<TbChevronsLeft />}
+            expandIcon={<TbChevronsRight />}
+          >
             <Sidebar.Header
               title="Sparkle"
               subtitle="UI Component Library"
@@ -92,6 +114,7 @@ export default function Example() {
                   Dashboard
                 </Sidebar.Item>
               </Link>
+
               <Sidebar.Item icon={<TbUsers />}>
                 Audience
                 <div className="nested-items">
@@ -107,6 +130,7 @@ export default function Example() {
                   </Link>
                 </div>
               </Sidebar.Item>
+
               <Sidebar.Item icon={<TbFileText />}>
                 Posts
                 <div className="nested-items">
@@ -139,10 +163,27 @@ export default function Example() {
             </Sidebar.Section>
 
             <Sidebar.Footer
-              avatar={<Avatar size="small">JD</Avatar>}
+              avatar={
+                <Avatar size="small">
+                  <Avatar.Image src="avatar.jpg" alt="User Avatar" />
+                </Avatar>
+              }
               name="John Doe"
-              email="john@example.com"
-              dropdown={<TbChevronDown />}
+              email="john.doe@example.com"
+              dropdownItems={[
+                {
+                  label: "Profile",
+                  onClick: () => console.log("Profile clicked"),
+                },
+                {
+                  label: "Account Settings",
+                  onClick: () => console.log("Account Settings clicked"),
+                },
+                {
+                  label: "Logout",
+                  onClick: () => console.log("Logout clicked"),
+                },
+              ]}
             />
           </Sidebar>
         </div>

@@ -6,8 +6,7 @@ import SidebarItem from "./SidebarItem";
 import SidebarFooter from "./SidebarFooter";
 import SidebarSection from "./SidebarSection";
 import Button from "../Button/Button";
-import { TbChevronsLeft, TbChevronsRight } from "react-icons/tb";
-const Sidebar = ({ children, className = "" }) => {
+const Sidebar = ({ children, className = "", collapseIcon, expandIcon, }) => {
     const [isCollapsed, setIsCollapsed] = useState(window.innerWidth < 768);
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
     useEffect(() => {
@@ -24,7 +23,9 @@ const Sidebar = ({ children, className = "" }) => {
     const toggleSidebar = () => {
         setIsCollapsed((prev) => !prev);
     };
-    return (_jsxs("div", { className: `${styles.sidebarContainer} ${isMobile ? styles.mobile : ""}`, children: [_jsx("div", { className: `${styles.sidebar} ${isCollapsed ? styles.sidebarCollapsed : styles.sidebarExpanded} ${className}`, children: children }), _jsx(Button, { variant: "ghost", size: "small", className: styles.toggleBtn, onClick: toggleSidebar, "aria-expanded": !isCollapsed, "aria-label": "Toggle Sidebar", children: isCollapsed ? (_jsx(TbChevronsRight, { size: 15 })) : (_jsx(TbChevronsLeft, { size: 15 })) })] }));
+    return (_jsxs("div", { className: `${styles.sidebarContainer} ${isMobile ? styles.mobile : ""}`, children: [_jsx("div", { className: `${styles.sidebar} ${isCollapsed ? styles.sidebarCollapsed : styles.sidebarExpanded} ${className}`, children: children }), _jsx(Button, { variant: "ghost", size: "small", className: styles.toggleBtn, onClick: toggleSidebar, "aria-expanded": !isCollapsed, "aria-label": "Toggle Sidebar", children: isCollapsed
+                    ? expandIcon || _jsx("span", { children: "\u00BB" })
+                    : collapseIcon || _jsx("span", { children: "\u00AB" }) })] }));
 };
 Sidebar.Header = SidebarHeader;
 Sidebar.Item = SidebarItem;

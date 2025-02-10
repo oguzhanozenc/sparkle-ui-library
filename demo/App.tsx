@@ -33,6 +33,10 @@ import {
   TbLayoutSidebar,
   TbFileText,
   TbSwitch3,
+  TbSettings,
+  TbLogout,
+  TbChevronsLeft,
+  TbChevronsRight,
 } from "react-icons/tb";
 import "../src/lib/theme.css";
 
@@ -49,7 +53,7 @@ function Footer() {
     <footer className="app-footer">
       <p>© 2025 Sparkle UI Library.</p>
       <nav>
-        Built with passion by
+        Built with passion by{" "}
         <a
           href="https://oguzhanozenc.me/"
           target="_blank"
@@ -65,9 +69,28 @@ function Footer() {
 function MainApp() {
   const location = useLocation();
 
+  const sidebarLinks = [
+    { to: "/", label: "Introduction", icon: <TbHome /> },
+    { to: "/avatar", label: "Avatar", icon: <TbUserCircle /> },
+    { to: "/badge", label: "Badge", icon: <TbStar /> },
+    { to: "/button", label: "Button", icon: <TbCheck /> },
+    { to: "/card", label: "Card", icon: <TbCards /> },
+    { to: "/checkbox", label: "Checkbox", icon: <TbSquareCheck /> },
+    { to: "/dropdown", label: "Dropdown", icon: <TbMenu2 /> },
+    { to: "/input", label: "Input", icon: <TbInputSpark /> },
+    { to: "/menu", label: "Menu", icon: <TbMenu2 /> },
+    { to: "/navbar", label: "Navbar", icon: <TbLayoutNavbar /> },
+    { to: "/sidebar", label: "Sidebar", icon: <TbLayoutSidebar /> },
+    { to: "/textarea", label: "Textarea", icon: <TbFileText /> },
+    { to: "/toggleswitch", label: "ToggleSwitch", icon: <TbSwitch3 /> },
+  ];
+
   return (
     <div className="app-layout">
-      <Sidebar>
+      <Sidebar
+        collapseIcon={<TbChevronsLeft />}
+        expandIcon={<TbChevronsRight />}
+      >
         <Sidebar.Header
           title="Sparkle."
           subtitle="UI Component Library"
@@ -75,111 +98,43 @@ function MainApp() {
         />
 
         <Sidebar.Section title="Foundations">
-          <Link to="/">
+          {sidebarLinks.slice(0, 1).map(({ to, label, icon }) => (
+            <Link key={to} to={to}>
+              <Sidebar.Item icon={icon} isActive={location.pathname === to}>
+                {label}
+              </Sidebar.Item>
+            </Link>
+          ))}
+        </Sidebar.Section>
+
+        <Sidebar.Section title="Components">
+          {sidebarLinks.slice(1).map(({ to, label, icon }) => (
+            <Link key={to} to={to}>
+              <Sidebar.Item icon={icon} isActive={location.pathname === to}>
+                {label}
+              </Sidebar.Item>
+            </Link>
+          ))}
+        </Sidebar.Section>
+
+        <Sidebar.Section title="Settings">
+          <Link to="/settings">
             <Sidebar.Item
-              icon={<TbHome />}
-              isActive={location.pathname === "/"}
+              icon={<TbSettings />}
+              isActive={location.pathname === "/settings"}
             >
-              Introduction
+              Settings
             </Sidebar.Item>
           </Link>
         </Sidebar.Section>
 
-        <Sidebar.Section title="Components">
-          <Link to="/avatar">
+        <Sidebar.Section title="Account">
+          <Link to="/logout">
             <Sidebar.Item
-              icon={<TbUserCircle />}
-              isActive={location.pathname === "/avatar"}
+              icon={<TbLogout />}
+              isActive={location.pathname === "/logout"}
             >
-              Avatar
-            </Sidebar.Item>
-          </Link>
-          <Link to="/badge">
-            <Sidebar.Item
-              icon={<TbStar />}
-              isActive={location.pathname === "/badge"}
-            >
-              Badge
-            </Sidebar.Item>
-          </Link>
-          <Link to="/button">
-            <Sidebar.Item
-              icon={<TbCheck />}
-              isActive={location.pathname === "/button"}
-            >
-              Button
-            </Sidebar.Item>
-          </Link>
-          <Link to="/card">
-            <Sidebar.Item
-              icon={<TbCards />}
-              isActive={location.pathname === "/card"}
-            >
-              Card
-            </Sidebar.Item>
-          </Link>
-          <Link to="/checkbox">
-            <Sidebar.Item
-              icon={<TbSquareCheck />}
-              isActive={location.pathname === "/checkbox"}
-            >
-              Checkbox
-            </Sidebar.Item>
-          </Link>
-          <Link to="/dropdown">
-            <Sidebar.Item
-              icon={<TbMenu2 />}
-              isActive={location.pathname === "/dropdown"}
-            >
-              Dropdown
-            </Sidebar.Item>
-          </Link>
-          <Link to="/input">
-            <Sidebar.Item
-              icon={<TbInputSpark />}
-              isActive={location.pathname === "/input"}
-            >
-              Input
-            </Sidebar.Item>
-          </Link>
-          <Link to="/menu">
-            <Sidebar.Item
-              icon={<TbMenu2 />}
-              isActive={location.pathname === "/menu"}
-            >
-              Menu
-            </Sidebar.Item>
-          </Link>
-          <Link to="/navbar">
-            <Sidebar.Item
-              icon={<TbLayoutNavbar />}
-              isActive={location.pathname === "/navbar"}
-            >
-              Navbar
-            </Sidebar.Item>
-          </Link>
-          <Link to="/sidebar">
-            <Sidebar.Item
-              icon={<TbLayoutSidebar />}
-              isActive={location.pathname === "/sidebar"}
-            >
-              Sidebar
-            </Sidebar.Item>
-          </Link>
-          <Link to="/textarea">
-            <Sidebar.Item
-              icon={<TbFileText />}
-              isActive={location.pathname === "/textarea"}
-            >
-              Textarea
-            </Sidebar.Item>
-          </Link>
-          <Link to="/toggleswitch">
-            <Sidebar.Item
-              icon={<TbSwitch3 />}
-              isActive={location.pathname === "/toggleswitch"}
-            >
-              ToggleSwitch
+              Logout
             </Sidebar.Item>
           </Link>
         </Sidebar.Section>
@@ -200,6 +155,8 @@ function MainApp() {
           <Route path="/sidebar" element={<SidebarShowcase />} />
           <Route path="/textarea" element={<TextareaShowcase />} />
           <Route path="/toggleswitch" element={<ToggleSwitchShowcase />} />
+          <Route path="/settings" element={<p>Settings Page</p>} />
+          <Route path="/logout" element={<p>Logging out...</p>} />
           <Route path="*" element={<IntroductionPage />} />
         </Routes>
         <Footer />

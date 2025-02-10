@@ -1,4 +1,4 @@
-import Avatar from "../../src/lib/Avatar/Avatar";
+import { Avatar } from "sparkle-ui-library";
 import Page from "./Page";
 
 export default function AvatarDemo() {

@@ -1,5 +1,5 @@
 import Page from "./Page";
-import Input from "../../src/lib/Input/Input";
+import { Input } from "sparkle-ui-library";
 
 export default function InputDemo() {
   const codeSnippet = `

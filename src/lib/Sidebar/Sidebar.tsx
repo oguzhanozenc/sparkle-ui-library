@@ -5,14 +5,20 @@ import SidebarItem from "./SidebarItem";
 import SidebarFooter from "./SidebarFooter";
 import SidebarSection from "./SidebarSection";
 import Button from "../Button/Button";
-import { TbChevronsLeft, TbChevronsRight } from "react-icons/tb";
 
 export type SidebarProps = {
   children: React.ReactNode;
   className?: string;
+  collapseIcon?: React.ReactNode;
+  expandIcon?: React.ReactNode;
 };
 
-const Sidebar = ({ children, className = "" }: SidebarProps) => {
+const Sidebar = ({
+  children,
+  className = "",
+  collapseIcon,
+  expandIcon,
+}: SidebarProps) => {
   const [isCollapsed, setIsCollapsed] = useState(window.innerWidth < 768);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
@@ -53,11 +59,9 @@ const Sidebar = ({ children, className = "" }: SidebarProps) => {
         aria-expanded={!isCollapsed}
         aria-label="Toggle Sidebar"
       >
-        {isCollapsed ? (
-          <TbChevronsRight size={15} />
-        ) : (
-          <TbChevronsLeft size={15} />
-        )}
+        {isCollapsed
+          ? expandIcon || <span>&#187;</span>
+          : collapseIcon || <span>&#171;</span>}
       </Button>
     </div>
   );

@@ -1,5 +1,5 @@
 import Page from "./Page";
-import Textarea from "../../src/lib/Textarea";
+import { Textarea } from "sparkle-ui-library";
 
 export default function TextareaDemo() {
   const codeSnippet = `

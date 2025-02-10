@@ -1,5 +1,5 @@
 import Page from "./Page";
-import Badge from "../../src/lib/Badge";
+import { Badge } from "sparkle-ui-library";
 
 export default function BadgeDemo() {
   const codeSnippet = `

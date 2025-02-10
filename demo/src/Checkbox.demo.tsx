@@ -1,5 +1,5 @@
 import Page from "./Page";
-import Checkbox from "../../src/lib/Checkbox";
+import { Checkbox } from "sparkle-ui-library";
 
 export default function CheckboxShowcase() {
   const codeSnippet = `

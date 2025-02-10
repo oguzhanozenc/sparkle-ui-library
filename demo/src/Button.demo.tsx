@@ -1,5 +1,5 @@
 import Page from "./Page";
-import Button from "../../src/lib/Button/Button";
+import { Button } from "sparkle-ui-library";
 
 export default function ButtonDemo() {
   const codeSnippet = `

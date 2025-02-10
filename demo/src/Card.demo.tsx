@@ -1,6 +1,5 @@
 import Page from "./Page";
-import Card from "../../src/lib/Card";
-import Button from "../../src/lib/Button";
+import { Card, Button } from "sparkle-ui-library";
 
 export default function CardDemo() {
   const codeSnippet = `

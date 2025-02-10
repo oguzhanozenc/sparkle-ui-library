@@ -1,5 +1,5 @@
 import Page from "./Page";
-import Dropdown from "../../src/lib/Dropdown";
+import { Dropdown } from "sparkle-ui-library";
 
 export default function DropdownShowcase() {
   const codeSnippet = `

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Page from "./Page";
-import Menu from "../../src/lib/Menu";
+import { Menu } from "sparkle-ui-library";
 
 export default function MenuDemo() {
   const codeSnippet = `

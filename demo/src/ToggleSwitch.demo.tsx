@@ -1,5 +1,5 @@
 import Page from "./Page";
-import ToggleSwitch from "../../src/lib/ToggleSwitch/ToggleSwitch";
+import { ToggleSwitch } from "sparkle-ui-library";
 
 export default function ToggleSwitchDemo() {
   const codeSnippet = `

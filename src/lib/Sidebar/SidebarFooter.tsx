@@ -1,12 +1,16 @@
-import React from "react";
-import { TbSettings } from "react-icons/tb";
+import React, { useState } from "react";
 import styles from "./Sidebar.module.css";
+
+export type DropdownItem = {
+  label: string;
+  onClick?: () => void;
+};
 
 export type SidebarFooterProps = {
   avatar?: React.ReactNode;
   name?: string;
   email?: string;
-  dropdown?: React.ReactNode;
+  dropdownItems?: DropdownItem[];
   children?: React.ReactNode;
 };
 
@@ -14,9 +18,15 @@ const SidebarFooter = ({
   avatar,
   name,
   email,
-  dropdown,
+  dropdownItems,
   children,
 }: SidebarFooterProps) => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prev) => !prev);
+  };
+
   if (children) {
     return <div className={styles.sidebarFooter}>{children}</div>;
   }
@@ -24,12 +34,34 @@ const SidebarFooter = ({
   return (
     <div className={styles.sidebarFooter}>
       {avatar && <div className={styles.footerAvatar}>{avatar}</div>}
+
       <div className={styles.footerText}>
         {name && <div className={styles.footerName}>{name}</div>}
         {email && <div className={styles.footerEmail}>{email}</div>}
       </div>
-      <div></div>
-      {dropdown ?? <TbSettings className={styles.footerDropdown} />}
+
+      <div className={styles.footerDropdown}>
+        <span onClick={toggleDropdown} role="button" aria-label="Open Dropdown">
+          &#9881;
+        </span>
+
+        {isDropdownOpen && dropdownItems && (
+          <ul className={styles.dropdownMenu}>
+            {dropdownItems.map((item, index) => (
+              <li
+                key={index}
+                onClick={() => {
+                  item.onClick && item.onClick();
+                  setIsDropdownOpen(false);
+                }}
+                className={styles.dropdownItem}
+              >
+                {item.label}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </div>
   );
 };

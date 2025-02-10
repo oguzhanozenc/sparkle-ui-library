@@ -1,5 +1,5 @@
 import Page from "./Page";
-import Navbar from "../../src/lib/Navbar";
+import { Navbar } from "sparkle-ui-library";
 import { Link } from "react-router-dom";
 import { TbSmartHome, TbUserCircle, TbMessageChatbot } from "react-icons/tb";
 import { IoLayersOutline } from "react-icons/io5";
