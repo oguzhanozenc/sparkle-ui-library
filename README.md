@@ -1,5 +1,7 @@
 # ✨ Sparkle UI Library
 
+![Featured Image](demo/featuredimg.png)
+
 **Sparkle** is an aesthetic React UI Component Library built with TypeScript and Vite. Designed to bring beauty, functionality, and simplicity to your user interfaces, it offers a modern take on reusable components inspired by leading design systems.
 
 ---
